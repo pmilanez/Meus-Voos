@@ -8,13 +8,13 @@ ActiveAdmin::Dashboards.build do
   # == Simple Dashboard Section
   # Here is an example of a simple dashboard section
   #
-    section "Últimos aeroportos cadastrados" do
-      ul do
-        Aeroporto.order("created_at desc").limit(5).each do |aeroporto|
-          li link_to(aeroporto.nome + " / " + aeroporto.icaocode, admin_aeroporto_path(aeroporto))
-        end
-      end
-    end
+    # section "Últimos aeroportos cadastrados" do
+    #   ul do
+    #     Aeroporto.order("created_at desc").limit(5).each do |aeroporto|
+    #       li link_to(aeroporto.nome + " / " + aeroporto.icaocode, admin_aeroporto_path(aeroporto))
+    #     end
+    #   end
+    # end
   
   # == Render Partial Section
   # The block is rendered within the context of the view, so you can

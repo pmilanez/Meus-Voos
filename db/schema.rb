@@ -46,13 +46,4 @@ ActiveRecord::Schema.define(:version => 20120409005001) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
-  create_table "aeroportos", :force => true do |t|
-    t.string   "nome"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.string   "icaocode"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
 end
