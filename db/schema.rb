@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120411201127) do
+ActiveRecord::Schema.define(:version => 20120415200841) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -54,5 +54,32 @@ ActiveRecord::Schema.define(:version => 20120411201127) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "flights", :force => true do |t|
+    t.date     "date"
+    t.integer  "origin_id"
+    t.integer  "destination_id"
+    t.integer  "aircraft_id"
+    t.text     "observation"
+    t.integer  "landings"
+    t.float    "mono_hours"
+    t.float    "multi_hours"
+    t.float    "instructor_hours"
+    t.float    "navigation_hours"
+    t.float    "day_hours"
+    t.float    "night_hours"
+    t.float    "ifr_hours"
+    t.float    "capota_hours"
+    t.float    "dual_command_hours"
+    t.float    "pilot_in_command_hours"
+    t.float    "copilot_hours"
+    t.float    "total_hours"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "flights", ["aircraft_id"], :name => "index_flights_on_aircraft_id"
+  add_index "flights", ["destination_id"], :name => "index_flights_on_destination_id"
+  add_index "flights", ["origin_id"], :name => "index_flights_on_origin_id"
 
 end
