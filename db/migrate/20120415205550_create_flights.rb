@@ -5,7 +5,7 @@ class CreateFlights < ActiveRecord::Migration
       t.references :origin
       t.references :destination
       t.references :aircraft
-      t.text :observation
+      t.string :observation
       t.integer :landings
       t.float :mono_hours
       t.float :multi_hours

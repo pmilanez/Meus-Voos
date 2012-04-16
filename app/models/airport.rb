@@ -1,4 +1,8 @@
-class Airport < ActiveRecord::Base
+class Airport < ActiveRecord::Base  
+  # Relationships
+  has_many :flights, :dependent => :destroy
+  
+  # Validating
   validates_presence_of :name, :on => :create, :message => "can't be blank"
   validates_presence_of :latitude, :on => :create, :message => "can't be blank"
   validates_presence_of :longitude, :on => :create, :message => "can't be blank"
